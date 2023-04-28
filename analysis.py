@@ -81,6 +81,7 @@ plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Length', fontsize=fs)
 plt.legend(title='Class of iris')
 plt.legend(['Sepal Length', 'Sepal Width','Petal Length','Petal Width'], fontsize = legend_fs)
+plt.savefig("sepal_and_petal_lengths.png", format="png")
 plt.show()
 
 #Class subsets
@@ -104,6 +105,7 @@ plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Width', fontsize=fs)
 plt.legend(title='Class of iris')
 plt.legend(['Setosa', 'Versicolor','Virginica'], fontsize = legend_fs)
+plt.savefig("frequency_sepal_width.png", format="png")
 plt.show()
 
 #Plot based on class length subset data
@@ -113,6 +115,7 @@ plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Length', fontsize=fs)
 plt.legend(title='Class of iris')
 plt.legend(['Setosa', 'Versicolor','Virginica'], fontsize = legend_fs)
+plt.savefig("frequency_sepal_length.png", format="png")
 plt.show()
 
 
