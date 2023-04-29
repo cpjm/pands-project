@@ -20,15 +20,6 @@ fs=11 # font size for the plot text
 legend_fs=6  # font size for the legend text
 
 
-#def yes_or_no from https://stackoverflow.com/questions/47735267/while-loop-with-yes-no-input-python
-def yes_or_no(question):
-    reply = str(input(question+' (y/n): ')).lower().strip()
-    if reply[0] == 'y':
-        return 1
-    elif reply[0] == 'n':
-        return 0
-    else:
-        return yes_or_no("Please Enter (y/n): ")
      
 # function that takes in a dataset and filename 
 # and saves the plot to a PDF file.
@@ -208,7 +199,7 @@ plt.close()
 ######################################
 
 #SETOSA CLASS - SEPAL WIDTH plot
-plt.hist([setosa_sepalWidth_data])
+plt.hist([setosa_sepalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Setosa Sepal width', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Width', fontsize=fs)
@@ -219,7 +210,7 @@ if display_plots_to_screen: plt.show()
 plt.close()
 
 #SETOSA CLASS - SEPAL LENGTH plot
-plt.hist([setosa_sepalLen_data])
+plt.hist([setosa_sepalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Setosa Sepal length', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Length', fontsize=fs)
@@ -230,7 +221,7 @@ if display_plots_to_screen: plt.show()
 plt.close()
 
 #SETOSA CLASS - PETAL WIDTH plot
-plt.hist([setosa_PetalWidth_data])
+plt.hist([setosa_PetalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Setosa Petal width', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Width', fontsize=fs)
@@ -241,12 +232,15 @@ if display_plots_to_screen: plt.show()
 plt.close()
 
 #SETOSA CLASS - PETAL LENGTH plot
-plt.hist([setosa_PetalLen_data])
+plt.hist([setosa_PetalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/
 plt.title('Frequency of each Setosa Petal length', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Length', fontsize=fs)
 plt.legend(title='Class of Setosa iris')
 plt.legend(['Setosa'], fontsize = legend_fs)
+#plt.width = 1
+#plt.tight_layout()
+#plt.figsize=(2,5) # ref https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html
 plt.savefig("frequency_setosa_Petal_length.png", format="png")
 if display_plots_to_screen: plt.show()
 plt.close()
@@ -257,7 +251,7 @@ plt.close()
 ######################################
 
 #VERISICOLOR CLASS - SEPAL WIDTH plot
-plt.hist([versicolor_sepalWidth_data])
+plt.hist([versicolor_sepalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each versicolor Sepal width', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Width', fontsize=fs)
@@ -268,7 +262,7 @@ if display_plots_to_screen: plt.show()
 plt.close()
 
 #VERISICOLOR CLASS - SEPAL LENGTH plot
-plt.hist([versicolor_sepalLen_data])
+plt.hist([versicolor_sepalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each versicolor Sepal length', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Length', fontsize=fs)
@@ -279,7 +273,7 @@ if display_plots_to_screen: plt.show()
 plt.close()
 
 #VERISICOLOR CLASS - PETAL WIDTH plot
-plt.hist([versicolor_PetalWidth_data])
+plt.hist([versicolor_PetalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each versicolor Petal width', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Width', fontsize=fs)
@@ -290,7 +284,7 @@ if display_plots_to_screen: plt.show()
 plt.close()
 
 #VERISICOLOR CLASS - PETAL LENGTH plot
-plt.hist([versicolor_PetalLen_data])
+plt.hist([versicolor_PetalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each versicolor Petal length', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Length', fontsize=fs)
@@ -308,7 +302,7 @@ plt.close()
 ######################################
 
 #VIRGINICA CLASS - SEPAL WIDTH plot
-plt.hist([virginica_sepalWidth_data])
+plt.hist([virginica_sepalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Virginica Sepal width', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Width', fontsize=fs)
@@ -319,7 +313,7 @@ if display_plots_to_screen: plt.show()
 plt.close()
 
 #VIRGINICA CLASS - SEPAL LENGTH plot
-plt.hist([virginica_sepalLen_data])
+plt.hist([virginica_sepalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Virginica Sepal length', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Length', fontsize=fs)
@@ -330,7 +324,7 @@ if display_plots_to_screen: plt.show()
 plt.close()
 
 #VIRGINICA CLASS - PETAL WIDTH plot
-plt.hist([virginica_PetalWidth_data])
+plt.hist([virginica_PetalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Virginica Petal width', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Width', fontsize=fs)
@@ -341,7 +335,7 @@ if display_plots_to_screen: plt.show()
 plt.close()
 
 #VIRGINICA CLASS - PETAL LENGTH plot
-plt.hist([virginica_PetalLen_data])
+plt.hist([virginica_PetalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Virginica Petal length', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Length', fontsize=fs)
