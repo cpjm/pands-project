@@ -16,9 +16,31 @@ I had no idea what this dataset was all about. Before diving in headfirst to do 
 <br />
 The data set is a collection of measurements of the sepal and petal of 3 varieties of the iris flower - Setosa, Virginica and Versicolor. The flowers were picked from the same field (in Quebec Canada) on the same day and by the same person using the same apparatus. 
 <br />
+<table>
+<tr>
+    <th>versicolor</th>
+    <th>setosa</th>
+    <th>virginica</th>
+  </tr>
+  <tr>
+    <td>
+    <img src="images/330px-Iris_versicolor_3.jpg" style="width:222px;" alt="Iris versicolor" title="Iris versicolor" />
+    </td>
+    <td>
+    <img src="images/Kosaciec_szczecinkowaty_Iris_setosa.jpg" style="width:222px;" alt="Iris setosa" title="Iris setosa" />
+    </td>
+    <td>
+    <img src="images/Iris_virginica.jpg" style="width:222px;" alt="Iris virginica" title="Iris virginica" />
+    </td>
+  </tr>
+</table>
+
+<br />
 According to the American Museum of Natural History (1.3). 
 The sepal is the outer green leaf-like part of the flower bud.  
 The petal is the inner coloured part of the flower.	 
+<br />
+<img src="images/parts-of-a-flower_full_610.png" alt="parts of a flower" title="Parts of a flower" />
 </p>
 
 <br />
