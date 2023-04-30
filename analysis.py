@@ -11,7 +11,8 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import  pandas as pd
+import pandas as pd
+import seaborn as sns
 
 #############
 #DEFINE VARS
@@ -69,8 +70,6 @@ df = pd.read_csv('data/iris.data',names=col_names)
 #debug print(df.to_string()) 
 
 
-
-
 #3.1
 # Generate useful summary info to the outout file "iris_summary.txt"
 #ref https://pandashowto.com/how-to-save-dataframe-as-text-file/
@@ -80,28 +79,17 @@ df = pd.read_csv('data/iris.data',names=col_names)
 #debug print(df.describe())
 df.describe().to_string("iris_summary.txt")
 if display_plots_to_screen: print(df.describe(''))
-# print(df[["Sepal_Length"]].describe(include="all"))
-# print(df[["Sepal_Width"]].describe(include="all"))
-# print(df[["Petal_Length"]].describe(include="all"))
-# print(df[["Petal_Width"]].describe(include="all"))
-# print(df[["Class"]].describe(include="all"))
-# print(df[["Class","Sepal_Length"]].describe(include="all"))
-# print(df[["Class","Sepal_Width"]].describe(include="all"))
-# print(df[["Class","Petal_Length"]].describe(include="all"))
-# print(df[["Class","Petal_Width"]].describe(include="all"))
 
 #3.2
 #Saves a histogram of each variable to png files
 #As histgrams deal with numeric columns only, we
 #need to remove the non-numerical column i.e. the class flower description
-
-histogram_df = df # make a working copy of the dataset
+working_df = df # make a working copy of the dataset
 
 #def render_dataset(*indf, title,ylabel, xlabel,legend_title,legend_ol,save_filename,
 # save_filename_type="png",display_ploy_yn):
-df_list1=histogram_df.drop('Class',axis=1)
-df_list2=['Sepal Length', 'Sepal Width','Petal Length','Petal Width']
-print ("/n********/n")
+df_list1=working_df.drop('Class',axis=1) # we don't need the Class column, so we can drop it here
+df_list2=['Sepal Length', 'Sepal Width','Petal Length','Petal Width'] # These are our column names
 
 # render_dataset(df_list1, 
 #                "TEST Frequency of each Sepal and Petal lengths & widths",
@@ -113,8 +101,9 @@ print ("/n********/n")
 #                "png",
 #                "Y")
 
+
 #Histogram of the Sepal and Petal lengths for all 3 classes or iris
-plt.hist(histogram_df.drop('Class',axis=1))
+plt.hist(working_df.drop('Class',axis=1)) #here we dont need the Class column, so drop removes it
 plt.title('Frequency of each Sepal and Petal lengths & widths', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
 plt.xlabel('Length', fontsize=fs)
@@ -122,34 +111,113 @@ plt.legend(title='Class of iris')
 plt.legend(['Sepal Length', 'Sepal Width','Petal Length','Petal Width'], fontsize = legend_fs)
 plt.savefig("histogram_sepal_and_petal_lengths.png", format="png")
 if display_plots_to_screen: plt.show()
+plt.close()
+
 
 #Class subsets
-#col_names = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Class']
-setosa_data = histogram_df[histogram_df['Class'] == 'Iris-setosa']
-versicolor_data = histogram_df[histogram_df['Class'] == 'Iris-versicolor']
-virginica_data = histogram_df[histogram_df['Class'] == 'Iris-virginica']
 #Sepal width subset
-setosa_sepalWidth_data = histogram_df[histogram_df['Class'] == 'Iris-setosa']['Sepal_Width']
-versicolor_sepalWidth_data = histogram_df[histogram_df['Class'] == 'Iris-versicolor']['Sepal_Width']
-virginica_sepalWidth_data = histogram_df[histogram_df['Class'] == 'Iris-virginica']['Sepal_Width']
+sepalWidth_data = working_df['Sepal_Width']
 #Sepal length subset
-setosa_sepalLen_data = histogram_df[histogram_df['Class'] == 'Iris-setosa']['Sepal_Length']
-versicolor_sepalLen_data = histogram_df[histogram_df['Class'] == 'Iris-versicolor']['Sepal_Length']
-virginica_sepalLen_data = histogram_df[histogram_df['Class'] == 'Iris-virginica']['Sepal_Length']
+sepalLength_data = working_df['Sepal_Length']
 #Petal width subset
-setosa_PetalWidth_data = histogram_df[histogram_df['Class'] == 'Iris-setosa']['Petal_Width']
-versicolor_PetalWidth_data = histogram_df[histogram_df['Class'] == 'Iris-versicolor']['Petal_Width']
-virginica_PetalWidth_data = histogram_df[histogram_df['Class'] == 'Iris-virginica']['Petal_Width']
+petalWidth_data = working_df['Petal_Width']
 #Petal length subset
-setosa_PetalLen_data = histogram_df[histogram_df['Class'] == 'Iris-setosa']['Petal_Length']
-versicolor_PetalLen_data = histogram_df[histogram_df['Class'] == 'Iris-versicolor']['Petal_Length']
-virginica_PetalLen_data = histogram_df[histogram_df['Class'] == 'Iris-virginica']['Petal_Length']
+petalLength_data = working_df['Petal_Length']
+
+
+#col_names = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Class']
+#subclass specific data for the 3 Classes
+setosa_data = working_df[working_df['Class'] == 'Iris-setosa']
+versicolor_data = working_df[working_df['Class'] == 'Iris-versicolor']
+virginica_data = working_df[working_df['Class'] == 'Iris-virginica']
+
+
+#Sepal Class specific width subset
+setosa_sepalWidth_data = working_df[working_df['Class'] == 'Iris-setosa']['Sepal_Width']
+versicolor_sepalWidth_data = working_df[working_df['Class'] == 'Iris-versicolor']['Sepal_Width']
+virginica_sepalWidth_data = working_df[working_df['Class'] == 'Iris-virginica']['Sepal_Width']
+#Sepal Class specific length subset
+setosa_sepalLen_data = working_df[working_df['Class'] == 'Iris-setosa']['Sepal_Length']
+versicolor_sepalLen_data = working_df[working_df['Class'] == 'Iris-versicolor']['Sepal_Length']
+virginica_sepalLen_data = working_df[working_df['Class'] == 'Iris-virginica']['Sepal_Length']
+#Petal Class specific width subset
+setosa_PetalWidth_data = working_df[working_df['Class'] == 'Iris-setosa']['Petal_Width']
+versicolor_PetalWidth_data = working_df[working_df['Class'] == 'Iris-versicolor']['Petal_Width']
+virginica_PetalWidth_data = working_df[working_df['Class'] == 'Iris-virginica']['Petal_Width']
+#Petal Class specific length subset
+setosa_PetalLen_data = working_df[working_df['Class'] == 'Iris-setosa']['Petal_Length']
+versicolor_PetalLen_data = working_df[working_df['Class'] == 'Iris-versicolor']['Petal_Length']
+virginica_PetalLen_data = working_df[working_df['Class'] == 'Iris-virginica']['Petal_Length']
+
+################################################
+# SCATTER PLOT - All sepal and petal lengths 
+################################################
+# Seaborn plot
+#lineplot 
+#sns.lineplot(x="Sepal_Length", y="Sepal_Width", data=working_df)
+#scatter plot
+grph = sns.lmplot( x="Sepal_Length" , y="Petal_Length" , data=working_df, hue='Class', legend=False)
+plt.title("Scatter plot - combined sepal and petal lengths")
+plt.ylabel('Sepal', fontsize=fs)
+plt.xlabel('Petal', fontsize=fs)
+grph.fig.tight_layout() # helps it fit on the screen
+plt.savefig("scatter_all_sepal_petal_lengths.png", format="png")
+if display_plots_to_screen: plt.show()
+plt.close()
+
+#############################################
+# SCATTER PLOT - Setosa sepal and petal lengths
+#############################################
+# First attempt at scatter plot
+# Seaborn plot
+#lineplot 
+#sns.lineplot(x="Sepal_Length", y="Sepal_Width", data=working_df)
+#scatter plot
+grph=sns.lmplot(x="Sepal_Length" , y="Petal_Length", data=setosa_data, hue='Class', legend=False)
+plt.title("Scatter plot - Setosa sepal and petal lengths")
+plt.xlabel('Sepal', fontsize=fs)
+plt.ylabel('Petal', fontsize=fs)
+grph.fig.tight_layout() # helps it fit on the screen
+plt.savefig("scatter_setosa_sepal_petal_lengths.png", format="png")
+if display_plots_to_screen: plt.show()
+plt.close()
+
+#################################################
+# SCATTER PLOT - Versicolor sepal and petal lengths 
+#################################################
+# Seaborn plot
+#scatter plot
+grph=sns.lmplot(x="Sepal_Length" , y="Petal_Length", data=versicolor_data, hue='Class', legend=False)
+plt.title("Scatter plot - Versicolor sepal and petal Lengths")
+plt.xlabel('Sepal', fontsize=fs)
+plt.ylabel('Petal', fontsize=fs)
+grph.fig.tight_layout() # helps it fit on the screen
+plt.savefig("scatter_versicolor_sepal_petal_lengths.png", format="png")
+if display_plots_to_screen: plt.show()
+plt.close()
+quit()
+
+#################################################
+# SCATTER PLOT - Virginica sepal and petal Lengths 
+#################################################
+# Seaborn plot
+#scatter plot
+grph=sns.lmplot(x="Sepal_Length" , y="Petal_Length", data=virginica_data, hue='Class', legend=False)
+plt.title("Scatter plot - virginica sepal and petal Lengths")
+plt.ylabel('Sepal', fontsize=fs)
+plt.xlabel('Petal', fontsize=fs)
+grph.fig.tight_layout() # helps it fit on the screen
+plt.savefig("scatter_virginca_sepal_petal_lengths.png", format="png")
+if display_plots_to_screen: plt.show()
+plt.close()
+
+
 
 #########################################
-# COMBINED IRIS CLASSES PLOTS 
+# ALL IRIS CLASSES PLOTS - HISTOGRAM 
 #########################################
 
-#COMBINED CLASSES - SEPAL WIDTH plot
+#ALL CLASSES - SEPAL WIDTH plot
 plt.hist([setosa_sepalWidth_data,versicolor_sepalWidth_data,virginica_sepalWidth_data])
 plt.title('Frequency of each Sepal width', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
@@ -195,7 +263,7 @@ plt.close()
 ###################################################################################################
 
 ######################################
-# SETOSA CLASS plots
+# SETOSA CLASS plots - HISTOGRAM
 ######################################
 
 #SETOSA CLASS - SEPAL WIDTH plot
@@ -247,7 +315,7 @@ plt.close()
 ###################################################################################################
 
 ######################################
-# VERISICOLOR CLASS plots
+# VERISICOLOR CLASS plots - HISTOGRAM
 ######################################
 
 #VERISICOLOR CLASS - SEPAL WIDTH plot
@@ -298,7 +366,7 @@ plt.close()
 
 
 ######################################
-# VIRGINICA CLASS plots
+# VIRGINICA CLASS plots - HISTOGRAM
 ######################################
 
 #VIRGINICA CLASS - SEPAL WIDTH plot
