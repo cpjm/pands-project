@@ -195,7 +195,6 @@ grph.fig.tight_layout() # helps it fit on the screen
 plt.savefig("scatter_versicolor_sepal_petal_lengths.png", format="png")
 if display_plots_to_screen: plt.show()
 plt.close()
-quit()
 
 #################################################
 # SCATTER PLOT - Virginica sepal and petal Lengths 
