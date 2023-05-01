@@ -113,7 +113,16 @@ Pandas
 <br />
 <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html">DataFrame</a>
 <br />
+<a href="https://www.w3schools.com/python/pandas/pandas_csv.asp">Pandas Read CSV</a>
+<br />
 <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html">Remove columns from a DataFrame</a>
+</p>
+
+<p>
+matplotlib.org
+<br />
+<a href="https://matplotlib.org/stable/tutorials/introductory/pyplot.html">Pyplot tutorial</a>
+<br />
 </p>
 
 <p>
