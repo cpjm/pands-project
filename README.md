@@ -96,8 +96,6 @@ I used this information to learn what a sepal and petal are as I didn’t know t
 <a href="https://www.amnh.org/learn-teach/curriculum-collections/biodiversity-counts/plant-identification/plant-morphology/parts-of-a-flower#:~:text=Sepal%3A%20The%20outer%20parts%20of,slender%20filament%20supporting%20the%20anther">Plant Morphology - Parts of a Flower</a>
 </p>
 
-https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop.html
-
 <p>
 W3 Schools
 <br />
