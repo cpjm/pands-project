@@ -63,9 +63,9 @@ while True:
 #   3. petal length in cm
 #   4. petal width in cm
 #   5. class: 
-#      -- Iris Setosa
-#      -- Iris Versicolour
-#      -- Iris Virginica
+#      -- Iris-setosa
+#      -- Iris-versicolour
+#      -- Iris-virginica
 col_names = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Class']
 #ref https://www.w3schools.com/python/pandas/pandas_csv.asp#gsc.tab=0
 df = pd.read_csv('data/iris.data',names=col_names)
@@ -79,7 +79,7 @@ print(df.tail())
 #input("Press Enter to continue...")
 print("___DTYPES___________")
 print(df.dtypes)
-#input("Press Enter to continue...")
+input("Press Enter to continue...")
 
 #3.1
 # Generate useful summary info to the outout file "iris_summary.txt"
@@ -157,8 +157,9 @@ print("petalWidth_data.describe()>")
 petalWidth_data.describe()
 #Petal length subset
 petalLength_data = working_df[['Petal_Length']]
-#print("petalLength_data.describe()>")
-#petalLength_data.describe()
+print("petalLength_data.describe()>")
+petalLength_data.describe()
+input("Press Enter to continue...")
 
 
 #col_names = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Class']
@@ -215,14 +216,14 @@ virginica_PetalLen_data = working_df[working_df['Class'] == 'Iris-virginica']['P
 
 # MAX, MIN, MEAN and MEDIAN values set here 
 # for each class and also sepal and petal.
-PETAL_LENGTH_MIN=str(pd.DataFrame(petalLength_data).min)
-PETAL_LENGTH_MAX=str(pd.DataFrame(petalLength_data).max)
-PETAL_LENGTH_MEAN=str(pd.DataFrame(petalLength_data).mean)
-PETAL_LENGTH_MEDIAN=str(pd.DataFrame(petalLength_data).median)
-PETAL_WIDTH_MIN=str(pd.DataFrame(petalWidth_data).min)
-PETAL_WIDTH_MAX=str(pd.DataFrame(petalWidth_data).max)
-PETAL_WIDTH_MEAN=str(pd.DataFrame(petalWidth_data).mean)
-PETAL_WIDTH_MEDIAN=str(pd.DataFrame(petalWidth_data).median)
+PETAL_LENGTH_MIN=petalLength_data.min
+PETAL_LENGTH_MAX=petalLength_data.max
+PETAL_LENGTH_MEAN=petalLength_data.mean
+PETAL_LENGTH_MEDIAN=petalLength_data.median
+PETAL_WIDTH_MIN=petalWidth_data.min
+PETAL_WIDTH_MAX=petalWidth_data.max
+PETAL_WIDTH_MEAN=petalWidth_data.mean
+PETAL_WIDTH_MEDIAN=petalWidth_data.median
 
 '''
 print("*********************************************************")
@@ -360,11 +361,16 @@ grph.fig.tight_layout() # helps it fit on the screen
 statsText=""
 statsText=\
    "Petal - Min:" \
-   + PETAL_LENGTH_MIN + " Max:" + PETAL_LENGTH_MIN + \
-   " Mean:" + PETAL_LENGTH_MEAN+ " Max:" + PETAL_LENGTH_MEDIAN + \
+   + str(PETAL_LENGTH_MIN) + " Max:" + str(PETAL_LENGTH_MIN) + \
+   " Mean:" + str(PETAL_LENGTH_MEAN) + " Max:" + str(PETAL_LENGTH_MEDIAN) + \
    " Sepal - Min:" \
-   + SEPAL_LENGTH_MIN + " Max:" + SEPAL_LENGTH_MAX + \
-   " Mean:" + SEPAL_LENGTH_MEAN + " Median:" + SEPAL_LENGTH_MEDIAN
+   + str(SEPAL_LENGTH_MIN) + " Max:" + str(SEPAL_LENGTH_MAX) + \
+   " Mean:" + str(SEPAL_LENGTH_MEAN) + " Median:" + str(SEPAL_LENGTH_MEDIAN)
+statsText=\
+   "Petal - Min:" \
+   + str(PETAL_LENGTH_MIN) + " Max:" + str(PETAL_LENGTH_MIN) + \
+   " Sepal - Min:" \
+   + str(SEPAL_LENGTH_MIN) + " Max:" + str(SEPAL_LENGTH_MAX)
 
 
 '''
