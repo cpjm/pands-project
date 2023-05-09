@@ -77,7 +77,7 @@ The following table shows the statistics of the iris data as provided by a dataf
   </tr>
     <tr>
       <td>
-        <img src="1_histogram_sepal_and_petal_lengths.png" style="width:500px;" alt="Iris versicolor" title="Iris versicolor" />
+        <img src="01_histogram_sepal_and_petal_lengths.png" style="width:500px;" alt="Iris versicolor" title="Iris versicolor" />
       </td>
     </tr>
     <tr>
@@ -87,6 +87,43 @@ The following table shows the statistics of the iris data as provided by a dataf
     </tr>
   </table>
 </p>
+
+
+<br /><br /><img src="01_histogram_sepal_and_petal_lengths.png" />
+<br /><br /><img src="02_scatter_all_sepal_petal_lengths.png" />
+<br /><br /><img src="03_scatter_setosa_sepal_petal_lengths.png" />
+<br /><br /><img src="04_scatter_versicolor_sepal_petal_lengths.png" />
+<br /><br /><img src="05_scatter_virginca_sepal_petal_lengths.png" />
+<br /><br /><img src="06_histogram_frequency_sepal_width.png" />
+<br /><br /><img src="07_histogram_frequency_sepal_length.png" />
+<br /><br /><img src="08_histogram_frequency_petal_width.png" />
+<br /><br /><img src="09_histogram_frequency_petal_length.png" />
+<br /><br /><img src="10_histogram_frequency_setosa_sepal_width.png" />
+<br /><br /><img src="11_histogram_frequency_setosa_sepal_length.png" />
+<br /><br /><img src="12_histogram_frequency_setosa_Petal_width.png" />
+<br /><br /><img src="13_histogram_frequency_setosa_Petal_length.png" />
+<br /><br /><img src="14_scatter_all_sepal_petal_widths.png" />
+<br /><br /><img src="15_scatter_setosa_sepal_petal_widths.png" />
+<br /><br /><img src="16_scatter_versicolor_sepal_petal_widths.png" />
+<br /><br /><img src="17_scatter_virginca_sepal_petal_widths.png" />
+<br /><br /><img src="18_histogram_frequency_sepal_width.png" />
+<br /><br /><img src="19_histogram_frequency_sepal_length.png" />
+<br /><br /><img src="20_histogram_frequency_petal_width.png" />
+<br /><br /><img src="21_histogram_frequency_petal_length.png" />
+<br /><br /><img src="22_histogram_frequency_setosa_sepal_width.png" />
+<br /><br /><img src="23_histogram_frequency_setosa_sepal_length.png" />
+<br /><br /><img src="24_histogram_frequency_setosa_Petal_width.png" />
+<br /><br /><img src="25_histogram_frequency_setosa_Petal_length.png" />
+<br /><br /><img src="26_histogram_frequency_versicolor_sepal_width.png" />
+<br /><br /><img src="27_histogram_frequency_versicolor_sepal_length.png" />
+<br /><br /><img src="28_histogram_frequency_versicolor_Petal_width.png" />
+<br /><br /><img src="29_histogram_frequency_versicolor_Petal_length.png" />
+<br /><br /><img src="30_histogram_frequency_virginica_sepal_width.png" />
+<br /><br /><img src="31_histogram_frequency_virginica_sepal_length.png" />
+<br /><br /><img src="32_histogram_frequency_virginica_petal_width.png" />
+<br /><br /><img src="33_histogram_frequency_virginica_petal_length.png" />
+<br /><br /><img src="34_seaborn_histogram_kde_curve_all_iris_class_per_feature.png" />
+
 
 <br />
 
