@@ -121,7 +121,6 @@ print("END - df.describe() 1:- ")
 
 ######################################################################
 # Histogram of the Sepal and Petal lengths for all 3 classes or iris
-# WORKING
 ######################################################################
 #plt.hist(working_df.drop('Class',axis=1)) #here we dont need the Class column, so drop removes it
 plt.hist(df_list1)
@@ -348,7 +347,6 @@ for col in sepalWidth_data.columns:
 
 ################################################
 # SCATTER PLOT - All sepal and petal lengths 
-# WORKING
 ################################################
 # Seaborn plot
 #lineplot 
@@ -377,7 +375,6 @@ plt.close()
 
 #############################################
 # SCATTER PLOT - Setosa sepal and petal lengths
-# WORKING
 #############################################
 # First attempt at scatter plot
 # Seaborn plot
@@ -398,7 +395,6 @@ plt.close()
 
 #################################################
 # SCATTER PLOT - Versicolor sepal and petal lengths 
-# WORKING
 #################################################
 # Seaborn plot
 #scatter plot
@@ -416,7 +412,6 @@ plt.close()
 
 #################################################
 # SCATTER PLOT - Virginica sepal and petal Lengths
-# WORKING 
 #################################################
 # Seaborn plot
 #scatter plot
@@ -451,7 +446,6 @@ plt.close()
 
 ##########################################
 # COMBINED CLASSES - SEPAL LENGTH plot
-# WORKING
 ##########################################
 plt.hist([setosa_sepalLen_data,versicolor_sepalLen_data,virginica_sepalLen_data])
 plt.title('Frequency of each Sepal length', fontsize=fs)
@@ -468,7 +462,6 @@ plt.close()
 
 ######################################
 # COMBINED CLASSES - PETAL WIDTH plot
-# WORKING
 ######################################
 plt.hist([setosa_PetalWidth_data,versicolor_PetalWidth_data,virginica_PetalWidth_data])
 plt.title('Frequency of each Petal width', fontsize=fs)
@@ -485,7 +478,6 @@ plt.close()
 
 ########################################
 # COMBINED CLASSES - PETAL LENGTH plot
-# WORKING
 ########################################
 plt.hist([setosa_PetalLen_data,versicolor_PetalLen_data,virginica_PetalLen_data])
 plt.title('Frequency of each Petal length', fontsize=fs)
@@ -507,7 +499,6 @@ plt.close()
 
 ###################################
 # SETOSA CLASS - SEPAL WIDTH plot
-# WORKING
 ###################################
 plt.hist([setosa_sepalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Setosa Sepal width', fontsize=fs)
@@ -524,7 +515,6 @@ plt.close()
 
 ########################################
 # SETOSA CLASS - SEPAL LENGTH plot
-# WORKING
 ########################################
 plt.hist([setosa_sepalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Setosa Sepal length', fontsize=fs)
@@ -541,7 +531,6 @@ plt.close()
 
 #####################################
 # SETOSA CLASS - PETAL WIDTH plot
-# WORKING
 #####################################
 plt.hist([setosa_PetalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Setosa Petal width', fontsize=fs)
@@ -558,7 +547,6 @@ plt.close()
 
 ####################################
 # SETOSA CLASS - PETAL LENGTH plot
-# WORKING
 ####################################
 plt.hist([setosa_PetalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/
 plt.title('Frequency of each Setosa Petal length', fontsize=fs)
@@ -580,7 +568,6 @@ plt.close()
 
 ################################################
 # SCATTER PLOT - All sepal and petal widths
-# WORKING 
 ################################################
 # Seaborn plot
 #lineplot 
@@ -602,7 +589,6 @@ plt.close()
 
 #############################################
 # SCATTER PLOT - Setosa sepal and petal widths
-# WORKING
 #############################################
 # First attempt at scatter plot
 # Seaborn plot
@@ -623,7 +609,6 @@ plt.close()
 
 #################################################
 # SCATTER PLOT - Versicolor sepal and petal widths
-# WORKING 
 #################################################
 # Seaborn plot
 #scatter plot
@@ -641,7 +626,6 @@ plt.close()
 
 #################################################
 # SCATTER PLOT - Virginica sepal and petal Widths 
-# WORKING
 #################################################
 # Seaborn plot
 #scatter plot
@@ -665,7 +649,6 @@ plt.close()
 
 #################################
 # ALL CLASSES - SEPAL WIDTH plot
-# WORKING
 #################################
 plt.hist([setosa_sepalWidth_data,versicolor_sepalWidth_data,virginica_sepalWidth_data])
 plt.title('Frequency of each Sepal width', fontsize=fs)
@@ -682,7 +665,6 @@ plt.close()
 
 #########################################
 # COMBINED CLASSES - SEPAL LENGTH plot
-# WORKING
 #########################################
 plt.hist([setosa_sepalLen_data,versicolor_sepalLen_data,virginica_sepalLen_data])
 plt.title('Frequency of each Sepal length', fontsize=fs)
@@ -733,7 +715,6 @@ plt.close()
 
 #####################################
 # SETOSA CLASS - SEPAL WIDTH plot
-# WORKING
 #####################################
 plt.hist([setosa_sepalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Setosa Sepal width', fontsize=fs)
@@ -750,7 +731,6 @@ plt.close()
 
 ####################################
 # SETOSA CLASS - SEPAL LENGTH plot
-# WORKING
 ####################################
 plt.hist([setosa_sepalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Setosa Sepal width', fontsize=fs)
@@ -767,7 +747,6 @@ plt.close()
 
 ###################################
 # SETOSA CLASS - PETAL WIDTH plot
-# WORKING
 ###################################
 plt.hist([setosa_PetalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Setosa Petal width', fontsize=fs)
@@ -784,7 +763,6 @@ plt.close()
 
 ###################################
 # SETOSA CLASS - PETAL LENGTH plot
-# WORKING
 ###################################
 plt.hist([setosa_PetalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/
 plt.title('Frequency of each Setosa Petal length', fontsize=fs)
@@ -812,7 +790,6 @@ plt.close()
 
 #######################################
 # VERISICOLOR CLASS - SEPAL WIDTH plot
-# WORKING
 #######################################
 plt.hist([versicolor_sepalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each versicolor Sepal width', fontsize=fs)
@@ -829,7 +806,6 @@ plt.close()
 
 ##########################################
 # VERISICOLOR CLASS - SEPAL LENGTH plot
-# WORKING
 ##########################################
 plt.hist([versicolor_sepalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Versicolor Sepal length', fontsize=fs)
@@ -846,7 +822,6 @@ plt.close()
 
 #########################################
 # VERISICOLOR CLASS - PETAL WIDTH plot
-# WORKING
 #########################################
 plt.hist([versicolor_PetalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Versicolor Petal width', fontsize=fs)
@@ -863,7 +838,6 @@ plt.close()
 
 #########################################
 # VERISICOLOR CLASS - PETAL LENGTH plot
-# WORKING
 #########################################
 plt.hist([versicolor_PetalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Versicolor Petal length', fontsize=fs)
@@ -886,8 +860,7 @@ plt.close()
 ######################################
 
 ###################################
-#VIRGINICA CLASS - SEPAL WIDTH plot
-# WORKING
+# VIRGINICA CLASS - SEPAL WIDTH plot
 ###################################
 plt.hist([virginica_sepalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Virginica Sepal width', fontsize=fs)
@@ -904,7 +877,6 @@ plt.close()
 
 ######################################
 # VIRGINICA CLASS - SEPAL LENGTH plot
-# WORKING
 ######################################
 plt.hist([virginica_sepalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Virginica Sepal length', fontsize=fs)
@@ -921,7 +893,6 @@ plt.close()
 
 #####################################
 # VIRGINICA CLASS - PETAL WIDTH plot
-# WORKING
 #####################################
 plt.hist([virginica_PetalWidth_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Virginica Petal width', fontsize=fs)
@@ -938,7 +909,6 @@ plt.close()
 
 #####################################
 # VIRGINICA CLASS - PETAL LENGTH plot
-# WORKING
 #####################################
 plt.hist([virginica_PetalLen_data], rwidth=0.7) #use rwidth to add space in histogram as per https://www.geeksforgeeks.org/add-space-between-histogram-bars-in-matplotlib/)
 plt.title('Frequency of each Virginica Petal length', fontsize=fs)
@@ -952,11 +922,12 @@ if os.path.isfile(save_filename): os.remove(save_filename)
 plt.savefig(save_filename, format="png")
 if display_plots_to_screen: plt.show()
 plt.close()
-###################################################################################################
 
+###################################################################################################
 # trying a new fancy seaborn plot
 # as found on https://stackoverflow.com/questions/6282058/writing-numerical-values-on-the-plot-with-matplotlib
 # and changed for my dataframe
+###################################################################################################
 sns.set()
 #iris = sns.load_dataset('working_df')
 # make the 'Class' column categorical to fix the order
@@ -966,8 +937,6 @@ fig, axs = plt.subplots(2, 2, figsize=(12, 6))
 for col, ax in zip(df.columns[:4], axs.flat):
     sns.histplot(data=df, x=col, kde=True, hue='Class', common_norm=False, legend=ax==axs[0,0], ax=ax)
 plt.tight_layout()
-
-
 save_filename="34_seaborn_histogram_kde_curve_all_iris_class_per_feature.png"
 if os.path.isfile(save_filename): os.remove(save_filename) 
 plt.savefig(save_filename, format="png")

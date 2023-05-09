@@ -88,7 +88,14 @@ The following table shows the statistics of the iris data as provided by a dataf
   </table>
 </p>
 
+<br/>
+<p>
+<b>Class comparison of both sepal and petal widths and lengths</b>
+<br />
+<img src="34_seaborn_histogram_kde_curve_all_iris_class_per_feature.png" />
+</p>
 
+<br />
 <br /><br /><img src="01_histogram_sepal_and_petal_lengths.png" />
 <br /><br /><img src="02_scatter_all_sepal_petal_lengths.png" />
 <br /><br /><img src="03_scatter_setosa_sepal_petal_lengths.png" />
@@ -122,10 +129,7 @@ The following table shows the statistics of the iris data as provided by a dataf
 <br /><br /><img src="31_histogram_frequency_virginica_sepal_length.png" />
 <br /><br /><img src="32_histogram_frequency_virginica_petal_width.png" />
 <br /><br /><img src="33_histogram_frequency_virginica_petal_length.png" />
-<br /><br /><img src="34_seaborn_histogram_kde_curve_all_iris_class_per_feature.png" />
-
-
-<br />
+<br /><br />
 
 ### Sources of Research\References
 <p>
