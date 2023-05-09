@@ -159,8 +159,12 @@ matplotlib.org
 <p>
 Seaborn
 <br />
-<a href="https://seaborn.pydata.org/tutorial/introduction.html">Introduction</a>
+<a href="https://seaborn.pydata.org/tutorial/introduction.html">Seaborn Introduction</a>
+<br />
+<a href="https://seaborn.pydata.org/generated/seaborn.histplot.html">seaborn.histplot</a>
 <br />
 <a href="https://www.geeksforgeeks.org/python-seaborn-tutorial/l">GeeksForGeeks Seaborn Tutorial</a>
+<br />
+<a href="https://stackoverflow.com/questions/6282058/writing-numerical-values-on-the-plot-with-matplotlib">Fancy Seaborn Plot Example</a>
 </p>
 

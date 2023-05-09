@@ -131,7 +131,7 @@ plt.xlabel('Length & Width', fontsize=fs)
 plt.legend(title='Class of iris')
 plt.legend(['Sepal Length', 'Sepal Width','Petal Length','Petal Width'], fontsize = legend_fs)
 
-save_filename="1_histogram_sepal_and_petal_lengths.png"
+save_filename="01_histogram_sepal_and_petal_lengths.png"
 if os.path.isfile(save_filename): os.remove(save_filename) 
 plt.savefig(save_filename, format="png")
 if display_plots_to_screen: plt.show()
@@ -358,49 +358,17 @@ grph = sns.lmplot( x="Sepal_Length" , y="Petal_Length" , data=working_df, hue='C
 plt.title("Scatter plot - combined sepal and petal lengths")
 plt.xlabel('Sepal Length cm', fontsize=fs)
 plt.ylabel('Petal Length cm', fontsize=fs)
-#plt.annotate("Min:"+str(working_df.min)+"cm Max:"+str(working_df.max)+"cm")
-#plt.annotate('Note added at (0,0)', xy = (0, 0), xycoords='axes fraction')
-#plt.annotate('Note added at (0,1)', xy = (0, 1), xycoords='axes fraction')
-#plt.annotate('Note added at (1,0)', xy = (1, 0), xycoords='axes fraction')
-#plt.annotate('Note added at (1,1)', xy = (1, 1), xycoords='axes fraction')
-#plt.legend(title='Class of iris')
-#plt.legend(['Setosa', 'Versicolor','Virginica'], fontsize = legend_fs)
 grph.fig.tight_layout() # helps it fit on the screen
 
-
-statsText=""
+# Label each point with its value
 '''
-statsText=\
-   "Petal - Min:" \
-   + str(PETAL_LENGTH_MIN) + " Max:" + str(PETAL_LENGTH_MIN) + \
-   " Mean:" + str(PETAL_LENGTH_MEAN) + " Max:" + str(PETAL_LENGTH_MEDIAN) + \
-   " Sepal - Min:" \
-   + str(SEPAL_LENGTH_MIN) + " Max:" + str(SEPAL_LENGTH_MAX) + \
-   " Mean:" + str(SEPAL_LENGTH_MEAN) + " Median:" + str(SEPAL_LENGTH_MEDIAN)
-statsText=\
-   "Petal - Min:" \
-   + str(PETAL_LENGTH_MIN) + " Max:" + str(PETAL_LENGTH_MIN) + \
-   " Sepal - Min:" \
-   + str(SEPAL_LENGTH_MIN) + " Max:" + str(SEPAL_LENGTH_MAX)
+for line in range(0,working_df.shape[0]):
+         plt.text(working_df["Sepal_Length"][line]+0.01, working_df["Petal_Length"][line], 
+                 working_df["Class"][line], horizontalalignment='left', 
+                 size='medium', color='black', weight='semibold')
 '''
-
-'''
-#statsText="Sepal:" + sepalLength_data.describe() + " Petal:" + petalLength_data.describe()
-statsText="Sepal:" + sepalLength_data.describe() 
-statsText2=" Petal:" + petalLength_data.describe()
-
-print("statsText: ", statsText)
-print("statsText2: ", statsText2)
-'''
-
-plt.annotate(statsText,
-            xy = (1.0, -0.2),
-            xycoords='axes fraction',
-            ha='right',
-            va="center",
-            fontsize=10)
-
-save_filename="2_scatter_all_sepal_petal_lengths.png"
+             
+save_filename="02_scatter_all_sepal_petal_lengths.png"
 if os.path.isfile(save_filename): os.remove(save_filename) 
 plt.savefig(save_filename, format="png")
 if display_plots_to_screen: plt.show()
@@ -422,7 +390,7 @@ plt.xlabel('Sepal Length cm', fontsize=fs)
 plt.ylabel('Petal Length cm', fontsize=fs)
 grph.fig.tight_layout() # helps it fit on the screen
 
-save_filename="3_scatter_setosa_sepal_petal_lengths.png"
+save_filename="03_scatter_setosa_sepal_petal_lengths.png"
 if os.path.isfile(save_filename): os.remove(save_filename) 
 plt.savefig(save_filename, format="png")
 if display_plots_to_screen: plt.show()
@@ -440,7 +408,7 @@ plt.xlabel('Sepal Length cm', fontsize=fs)
 plt.ylabel('Petal Length cm', fontsize=fs)
 grph.fig.tight_layout() # helps it fit on the screen
 
-save_filename="4_scatter_versicolor_sepal_petal_lengths.png"
+save_filename="04_scatter_versicolor_sepal_petal_lengths.png"
 if os.path.isfile(save_filename): os.remove(save_filename) 
 plt.savefig(save_filename, format="png")
 if display_plots_to_screen: plt.show()
@@ -457,7 +425,7 @@ plt.title("Scatter plot - virginica sepal and petal Lengths")
 plt.xlabel('Sepal Length cm', fontsize=fs)
 plt.ylabel('Petal Length cm', fontsize=fs)
 grph.fig.tight_layout() # helps it fit on the screen
-plt.savefig("5_scatter_virginca_sepal_petal_lengths.png", format="png")
+plt.savefig("05_scatter_virginca_sepal_petal_lengths.png", format="png")
 if display_plots_to_screen: plt.show()
 plt.close()
 
@@ -475,7 +443,7 @@ plt.ylabel('Frequency', fontsize=fs)
 plt.legend(title='Class of iris')
 plt.legend(['Setosa', 'Versicolor','Virginica'], fontsize = legend_fs)
 
-save_filename="6_histogram_frequency_sepal_width.png"
+save_filename="06_histogram_frequency_sepal_width.png"
 if os.path.isfile(save_filename): os.remove(save_filename) 
 plt.savefig(save_filename, format="png")
 if display_plots_to_screen: plt.show()
@@ -492,7 +460,7 @@ plt.ylabel('Frequency', fontsize=fs)
 plt.legend(title='Class of iris')
 plt.legend(['Setosa', 'Versicolor','Virginica'], fontsize = legend_fs)
 
-save_filename="7_histogram_frequency_sepal_length.png"
+save_filename="07_histogram_frequency_sepal_length.png"
 if os.path.isfile(save_filename): os.remove(save_filename) 
 plt.savefig(save_filename, format="png")
 if display_plots_to_screen: plt.show()
@@ -509,7 +477,7 @@ plt.ylabel('Frequency', fontsize=fs)
 plt.legend(title='Class of iris')
 plt.legend(['Setosa', 'Versicolor','Virginica'], fontsize = legend_fs)
 
-save_filename="8_histogram_frequency_petal_width.png"
+save_filename="08_histogram_frequency_petal_width.png"
 if os.path.isfile(save_filename): os.remove(save_filename) 
 plt.savefig(save_filename, format="png")
 if display_plots_to_screen: plt.show()
@@ -526,7 +494,7 @@ plt.ylabel('Frequency', fontsize=fs)
 plt.legend(title='Class of iris')
 plt.legend(['Setosa', 'Versicolor','Virginica'], fontsize = legend_fs)
 
-save_filename="9_histogram_frequency_petal_length.png"
+save_filename="09_histogram_frequency_petal_length.png"
 if os.path.isfile(save_filename): os.remove(save_filename) 
 plt.savefig(save_filename, format="png")
 if display_plots_to_screen: plt.show()
@@ -985,6 +953,26 @@ plt.savefig(save_filename, format="png")
 if display_plots_to_screen: plt.show()
 plt.close()
 ###################################################################################################
+
+# trying a new fancy seaborn plot
+# as found on https://stackoverflow.com/questions/6282058/writing-numerical-values-on-the-plot-with-matplotlib
+# and changed for my dataframe
+sns.set()
+#iris = sns.load_dataset('working_df')
+# make the 'Class' column categorical to fix the order
+#iris=df
+df['Class'] = pd.Categorical(df['Class'])
+fig, axs = plt.subplots(2, 2, figsize=(12, 6))
+for col, ax in zip(df.columns[:4], axs.flat):
+    sns.histplot(data=df, x=col, kde=True, hue='Class', common_norm=False, legend=ax==axs[0,0], ax=ax)
+plt.tight_layout()
+
+
+save_filename="34_seaborn_histogram_kde_curve_all_iris_class_per_feature.png"
+if os.path.isfile(save_filename): os.remove(save_filename) 
+plt.savefig(save_filename, format="png")
+if display_plots_to_screen: plt.show()
+plt.close()
 
 
 #3.3 
