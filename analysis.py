@@ -79,6 +79,8 @@ print(df.tail())
 #input("Press Enter to continue...")
 print("___DTYPES___________")
 print(df.dtypes)
+print("___DESCRIBE___________")
+print(df.describe())
 input("Press Enter to continue...")
 
 #3.1
@@ -100,7 +102,7 @@ working_df = df # make a working copy of the dataset
     
 #def render_dataset(*indf, title,ylabel, xlabel,legend_title,legend_ol,save_filename,
 # save_filename_type="png",display_ploy_yn):
-df_list1=working_df.drop('Class',axis=1) # we don't need the Class column, so we can drop it here
+df_list1=working_df.drop('Class',axis=1).copy() # we don't need the Class column, so we can drop it here
 df_list2=['Sepal Length', 'Sepal Width','Petal Length','Petal Width'] # These are our column names
 
 print("START - df.describe(ALL) 1:- ")
@@ -121,10 +123,11 @@ print("END - df.describe() 1:- ")
 # Histogram of the Sepal and Petal lengths for all 3 classes or iris
 # WORKING
 ######################################################################
-plt.hist(working_df.drop('Class',axis=1)) #here we dont need the Class column, so drop removes it
+#plt.hist(working_df.drop('Class',axis=1)) #here we dont need the Class column, so drop removes it
+plt.hist(df_list1)
 plt.title('Frequency of each Sepal and Petal lengths & widths', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
-plt.xlabel('Length', fontsize=fs)
+plt.xlabel('Length & Width', fontsize=fs)
 plt.legend(title='Class of iris')
 plt.legend(['Sepal Length', 'Sepal Width','Petal Length','Petal Width'], fontsize = legend_fs)
 
@@ -133,6 +136,10 @@ if os.path.isfile(save_filename): os.remove(save_filename)
 plt.savefig(save_filename, format="png")
 if display_plots_to_screen: plt.show()
 plt.close()
+
+print("1.\n")
+df_list1.describe()
+input("Press Enter to continue...")
 
 
 #Class subsets
@@ -161,7 +168,7 @@ petalWidth_data.describe()
 petalLength_data = working_df[['Petal_Length']]
 print("petalLength_data.describe()>")
 petalLength_data.describe()
-input("Press Enter to continue...")
+#input("Press Enter to continue...")
 
 
 #col_names = ['Sepal_Length','Sepal_Width','Petal_Length','Petal_Width','Class']
@@ -362,6 +369,7 @@ grph.fig.tight_layout() # helps it fit on the screen
 
 
 statsText=""
+'''
 statsText=\
    "Petal - Min:" \
    + str(PETAL_LENGTH_MIN) + " Max:" + str(PETAL_LENGTH_MIN) + \
@@ -374,7 +382,7 @@ statsText=\
    + str(PETAL_LENGTH_MIN) + " Max:" + str(PETAL_LENGTH_MIN) + \
    " Sepal - Min:" \
    + str(SEPAL_LENGTH_MIN) + " Max:" + str(SEPAL_LENGTH_MAX)
-
+'''
 
 '''
 #statsText="Sepal:" + sepalLength_data.describe() + " Petal:" + petalLength_data.describe()

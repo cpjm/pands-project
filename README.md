@@ -53,8 +53,39 @@ TODO: more info here
 <br />
 
 ### Analysis of the Iris Dataset 
+
 <p>
-TODO: Analysis of graphs
+The following table shows the statistics of the iris data as provided by a dataframe .describe() method.
+<p>
+<p>
+
+|       | Sepal_Length | Sepal_Width | Petal_Length | Petal_Width |
+|:-----:|-------------:|------------:|-------------:|------------:|
+| count |          150 |         150 |          150 |         150 |
+|  mean |     5.843333 |    3.054000 |     3.758667 |    1.198667 |
+|  std  |     0.828066 |    0.433594 |     1.764420 |    0.763161 |
+|  min  |          4.3 |         2.0 |          1.0 |         0.1 |
+|  25%  |          5.1 |         2.8 |          1.6 |         0.3 |
+|  50%  |          5.8 |         3.0 |         4.35 |         1.3 |
+|  75%  |          6.4 |         3.3 |          5.1 |         1.8 |
+|  max  |          7.9 |         4.4 |          6.9 |         2.5 |
+</p>
+
+<table>
+  <tr>
+    <th>Histogram Sepal and Petal Lengths</th>
+  </tr>
+    <tr>
+      <td>
+        <img src="1_histogram_sepal_and_petal_lengths.png" style="width:500px;" alt="Iris versicolor" title="Iris versicolor" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+      Here we have a histogram plot for the frequency of sepal and petal lengths. From this plot we can see that 
+      </td>
+    </tr>
+  </table>
 </p>
 
 <br />
