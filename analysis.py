@@ -24,9 +24,9 @@ legend_fs=6  # font size for the legend text
 
      
 # function that takes in a dataset and filename 
-# and saves the plot to a PDF file.
-def render_dataset(indf, title,ylabel, xlabel,legend_title,legend_ol,save_filename,
-                   save_filename_type,display_plot_yn):
+# and saves the histogram plot to a PDF file.
+def gen_histogram(indf, title,xlabel, ylabel,legend_title,legend_ol,save_filename,
+                   save_filename_format):
     plt.hist(indf)
     plt.title(title, fontsize=fs)
     plt.ylabel(ylabel, fontsize=fs)
@@ -34,8 +34,35 @@ def render_dataset(indf, title,ylabel, xlabel,legend_title,legend_ol,save_filena
     plt.legend(title=legend_title)
     plt.legend(legend_ol, fontsize = legend_fs)
     if os.path.isfile(save_filename): os.remove(save_filename) 
-    plt.savefig(save_filename, save_filename_type)
-    #plt.show()
+    plt.savefig(save_filename, format=save_filename_format)
+    
+    if display_plots_to_screen: plt.show()
+    plt.close()
+    
+    
+# function that takes in a dataset and filename 
+# and saves the scatter plot to a PDF file.
+def gen_scatter(indf, title,xlabel, ylabel,inhue,show_legend,save_filename,
+                   save_filename_format):
+    print("in def gen_scatter")
+    grph = sns.lmplot(x=xlabel, y=ylabel, data=indf, hue=inhue, legend=True)
+    #grph=sns.lmplot(x="Sepal_Length" , y="Petal_Length", data=virginica_data, hue='Class', legend=False)
+    #grph = sns.lmplot( x="Sepal_Length" , y="Petal_Length" , data=working_df, hue='Class', legend=True)
+    print("2 in def gen_scatter")
+    plt.title(title)
+    print("3 in def gen_scatter")
+    plt.xlabel(xlabel, fontsize=fs)
+    print("4 in def gen_scatter")
+    plt.ylabel(ylabel, fontsize=fs)
+    print("5 in def gen_scatter")
+    grph.fig.tight_layout() # helps it fit on the screen             
+    print("6 in def gen_scatter")
+    if os.path.isfile(save_filename): os.remove(save_filename) 
+    print("7 in def gen_scatter")
+    plt.savefig(save_filename, format=save_filename_format)
+    print("8 in def gen_scatter")
+    if display_plots_to_screen: plt.show()
+    print("9 in def gen_scatter")
     plt.close()
     
 print("Starting iris data set analysis...")
@@ -102,13 +129,7 @@ with open(save_filename, 'w') as f:
         f.write(line)
         f.write('\n')
 f.close()
-        
-#df.groupby("Class").describe().to_string("iris_summary.txt")
 if display_plots_to_screen: print(df.groupby("Class").describe())
-
-print("df.groupby(\"Class\").describe() :-")
-print(df.groupby("Class").describe())
-input("Press Enter to continue...")
 
 #3.2
 #Saves a histogram of each variable to png files
@@ -117,7 +138,7 @@ input("Press Enter to continue...")
 working_df = df # make a working copy of the dataset
 
     
-#def render_dataset(*indf, title,ylabel, xlabel,legend_title,legend_ol,save_filename,
+#def gen_histogram(*indf, title,ylabel, xlabel,legend_title,legend_ol,save_filename,
 # save_filename_type="png",display_ploy_yn):
 df_list1=working_df.drop('Class',axis=1).copy() # we don't need the Class column, so we can drop it here
 df_list2=['Sepal Length', 'Sepal Width','Petal Length','Petal Width'] # These are our column names
@@ -126,20 +147,11 @@ print("START - df.describe(ALL) 1:- ")
 df_list1.describe(include='all') 
 print("END - df.describe() 1:- ")
 
-# render_dataset(df_list1, 
-#                "TEST Frequency of each Sepal and Petal lengths & widths",
-#                "TEST Frequency", 
-#                "TEST Length",
-#                "Class of iris",
-#                df_list2,
-#             "sepal_and_petal_lengths.png",
-#                "png",
-#                "Y")
-
 ######################################################################
 # Histogram of the Sepal and Petal lengths for all 3 classes or iris
 ######################################################################
 #plt.hist(working_df.drop('Class',axis=1)) #here we dont need the Class column, so drop removes it
+'''
 plt.hist(df_list1)
 plt.title('Frequency of each Sepal and Petal lengths & widths', fontsize=fs)
 plt.ylabel('Frequency', fontsize=fs)
@@ -152,10 +164,14 @@ if os.path.isfile(save_filename): os.remove(save_filename)
 plt.savefig(save_filename, format="png")
 if display_plots_to_screen: plt.show()
 plt.close()
+'''
+gen_histogram(df_list1, "Frequency of each Sepal and Petal lengths & widths",\
+    "Length & Width", "Frequency", "Class of iris",['Sepal Length', 'Sepal Width','Petal Length','Petal Width'],\
+        "01_histogram_sepal_and_petal_lengths.png", "png")
 
-print("1.\n")
-df_list1.describe()
-input("Press Enter to continue...")
+#print("1.\n")
+#df_list1.describe()
+#input("Press Enter to continue...")
 
 
 #Class subsets
@@ -369,26 +385,27 @@ for col in sepalWidth_data.columns:
 #lineplot 
 #sns.lineplot(x="Sepal_Length", y="Sepal_Width", data=working_df)
 #scatter plot
+
+'''
 grph = sns.lmplot( x="Sepal_Length" , y="Petal_Length" , data=working_df, hue='Class', legend=True)
 plt.title("Scatter plot - combined sepal and petal lengths")
 plt.xlabel('Sepal Length cm', fontsize=fs)
 plt.ylabel('Petal Length cm', fontsize=fs)
-grph.fig.tight_layout() # helps it fit on the screen
-
-# Label each point with its value
-'''
-for line in range(0,working_df.shape[0]):
-         plt.text(working_df["Sepal_Length"][line]+0.01, working_df["Petal_Length"][line], 
-                 working_df["Class"][line], horizontalalignment='left', 
-                 size='medium', color='black', weight='semibold')
-'''
-             
+grph.fig.tight_layout() # helps it fit on the screen             
 save_filename="02_scatter_all_sepal_petal_lengths.png"
 if os.path.isfile(save_filename): os.remove(save_filename) 
 plt.savefig(save_filename, format="png")
 if display_plots_to_screen: plt.show()
-plt.show()
 plt.close()
+'''
+
+'''def gen_scatter(indf, title,xlabel, ylabel,inhue,show_legend,save_filename,
+                   save_filename_format):
+'''
+gen_scatter(working_df, "Scatter plot - combined sepal and petal lengths",\
+    "Sepal_Length", "Petal_Length","Class",True,"02_TEST_GEN_scatter_all_sepal_petal_lengths.png",\
+                   "png")
+
 
 #############################################
 # SCATTER PLOT - Setosa sepal and petal lengths
