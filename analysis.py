@@ -89,9 +89,26 @@ input("Press Enter to continue...")
 #I analyse this data further and what it means in my research
 #df.to_string("myfile.txt")
 #ref https://www.w3schools.com/python/pandas/ref_df_describe.asp
-#debug print(df.describe())
-df.describe().to_string("iris_summary.txt")
-if display_plots_to_screen: print(df.describe(''))
+#groupby "Class" means we describe() the stats per class of iris, which is more meaningful
+save_filename="iris_summary.txt"
+if os.path.isfile(save_filename): os.remove(save_filename) 
+lines = ["Iris Dataset Summary Info\n"+"-------------------------\n\n",\
+    "Dataset Describe\n"+"----------------\n"+str(df.describe())+"\n\n",\
+    "Dataset Group by Class Describe\n"+"-------------------------------\n"+str(df.groupby("Class").describe())+"\n\n", \
+    "Dataset Head\n"+"------------\n"+str(df.head)+"\n\n",\
+    "Dataset Tail\n"+"------------\n"+str(df.tail)+"\n\n"]
+with open(save_filename, 'w') as f:
+    for line in lines:
+        f.write(line)
+        f.write('\n')
+f.close()
+        
+#df.groupby("Class").describe().to_string("iris_summary.txt")
+if display_plots_to_screen: print(df.groupby("Class").describe())
+
+print("df.groupby(\"Class\").describe() :-")
+print(df.groupby("Class").describe())
+input("Press Enter to continue...")
 
 #3.2
 #Saves a histogram of each variable to png files
