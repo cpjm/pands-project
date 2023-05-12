@@ -7,9 +7,24 @@
 
 <br />
 
-### Initial Background Research
+### Project Plan (or was it?!)
+<p>I lead a very busy life (who doesn't?!). Therefore it was obvious that I needed some sort of plan - without a plan I wouldn't succeed. Fail to plan, and plan to fail, as they say.
+</p> 
+<p>
+Having said that, I'm not a project manager either. However I made an early decision to set goals and targets for myself. This meant that I had to stick to deadlines and push myself to get goals completed on a regular basis. It was many a weekend/night whereby my wife said "you've done enough"; but I knew that I had to complete whatever item I was working on...as there was always more to do, and I couldn't fall behind and let it become overwhelming.
+</p>
+<p>
+So even though I didn't produce a physical project plan, I had pre-conceived items that I would sit down to start/complete at each particular sitting. There was never a time where I would open my laptop and ask myself "what next?". I would have decided that already. My planning was done on the school drop-offs, walking the dogs, on the side of the GAA pitch etc. I had to keep myself planning ahead at all times, all places. Questions I constantly considered were "what is completed now" (for positivity), "what should I do next", "how can I break it down into sizable chunks", and "what is left to complete" were forever whirling around my mind.
+</p>
+<p>
+So that was my own personal project planning. Maybe not ideal, but I feel like I did the best I could in the time I had. And anyhow, isn't this somewhat representative of some IT projects I suppose, where one needs to think on their feet?!
+</p>
+<br/>
 
 <p>
+
+### Initial Background Research
+
 I had no idea what this dataset was all about. Before diving in headfirst to do the analysis and programming, it was imperative that I got an understanding of what this data means - to garner a real-world understanding of why it exists and where it came from. 
 <br />
  From Wikipedia (1.1) and some informative YouTube videos (e.g. Great Learning 1.2) I discovered the following facts. The data originates from 1936 and was created by a botanist and statistician Ronald Fisher. 
@@ -128,10 +143,13 @@ max - the maximum value.
 |  75%  |          6.4 |         3.3 |          5.1 |         1.8 |
 |  max  |          7.9 |         4.4 |          6.9 |         2.5 |
 </p>
+<br />
 
-<h2>My personal observations of the iris data</h2>
 <p>
-The following represents my personal observations that I have formed whilst working with the data, and also viewing the graphs which I produced as per below.
+
+### My personal analysis and observations of the iris data
+
+The following represents my personal analysis performed and observations formed whilst working with the data, and also producing and viewing the graphs which I include below.
 </p>
 
 <p>
@@ -228,7 +246,9 @@ We have 4 plots in the one image - sepal length, sepal width, petal length and p
 </p>
 
 <br />
-<h3>Observations per Class of iris</h3>
+
+### Observations per Class of iris
+
 <br />
 <u>Setosa</u>
 <br />
@@ -250,7 +270,9 @@ Versicolor sits in the middle ground. Its variations in measurements sits betwee
 
 <br/>
 <br/>
-<h3>Additional Graphs</h3>
+
+### Additional Graphs
+
 <p>
 The following are additional graphs reflecting my observations and opinion above.
 </p>
