@@ -62,7 +62,17 @@ The petal is the inner coloured part of the flower.
 <img src="images/parts-of-a-flower_full_610.png" alt="parts of a flower" title="Parts of a flower" />
 </p>
 <br />
+
 <p>
+
+### How to per form the analysis using Python?
+In order to get an understanding on how to do the analysis, I spent my first few days (read nights) reading through various websites such as W3Schools, matplotlib.org, general Google searches for rish data analysis, and of course YouTube. And many a night on StackOverflow to boot (and many more as per references at the end of the readme). This helped me form a solid understanding and also a general plan on how to approach the project and how to analyse the iris data. 
+</p>
+
+<p>
+
+### What is the iris dats set?
+
 The iris data is provided in a comma delimited csv file. As such this format isn't sufficient to perform analysis on. We therefore load this into a DataFrame, which converts it into a tabular format in memory. We can then perform many operations on this type of data, including sub-sets, sorting, statistics, plotting etc.
 </p>
 <p>
