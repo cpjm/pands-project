@@ -245,7 +245,7 @@ Virginica then represents the larget of the 3 iris flowers. It also demonstrates
 <u>Versicolor</u>
 <br />
 <p>
-Versicolor sits in the middle ground. Its variations in measurements site between setosa and virginica. As does its petal/sepal lengths and widths.
+Versicolor sits in the middle ground. Its variations in measurements sits between setosa and virginica. As does its petal/sepal lengths and widths.
 </p>
 
 <br/>
@@ -255,7 +255,7 @@ Versicolor sits in the middle ground. Its variations in measurements site betwee
 The following are additional graphs reflecting my observations and opinion above.
 </p>
 <p>
-There is a wide selection of histogram and scatter plots available for your persual. You will see that my above observations are also born out in these plots also.
+There is a wide selection of histogram and scatter plots available for your persual. You will hopefully see that my observations are demonstrated in these plots also.
 </p>
 
 <br />
