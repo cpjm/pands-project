@@ -15,7 +15,9 @@ I had no idea what this dataset was all about. Before diving in headfirst to do 
  From Wikipedia (1.1) and some informative YouTube videos (e.g. Great Learning 1.2) I discovered the following facts. The data originates from 1936 and was created a botanist and statistician Ronald Fisher. 
 <br />
 The data set is a collection of measurements of the sepal and petal of 3 varieties of the iris flower - Setosa, Virginica and Versicolor. The flowers were picked from the same field (in Quebec Canada) on the same day and by the same person using the same apparatus. 
-<br />
+</p>
+
+<p>
 <table>
 <tr>
     <th>versicolor</th>
@@ -34,7 +36,9 @@ The data set is a collection of measurements of the sepal and petal of 3 varieti
     </td>
   </tr>
 </table>
+</p>
 
+<p>
 <br />
 According to the American Museum of Natural History (1.3). 
 The sepal is the outer green leaf-like part of the flower bud.  
@@ -44,18 +48,72 @@ The petal is the inner coloured part of the flower.
 </p>
 
 <br />
-
-### What is the Iris Dataset? 
-<p>
-TODO: more info here
-</p>
-
 <br />
 
-### Analysis of the Iris Dataset 
+<p>
+The iris data is provided in a comma delimited csv file. As such this format isn't sufficient to perform analysis on. We therefore load this into a DataFrame, which converts it into a tabular format in memory. We can then perform many operations on this type of data, including sub-sets, sorting, statistics, plotting etc.
+</p>
+<p>
+There are three different class of irish included in the namely
+<ol>
+<li>setosa</li>
+<li>versicolor</li>
+<li>virginica</li>
+</ol>
+</p>
+<p>
+We are additionally provided with four different measurements for each class of iris:- 
+<ol>
+<li>sepal length (cm)</li>
+<li>sepal width (cm)</li>
+<li>petal length (cm)</li>
+<li>petal width (cm)</li>
+</ol>
+<br />
+The following data is representative of the csv data provided. The dataframe head and tail methods can be used for this purpose. The dataframe.head() method will display the top (n) rows of data (5 by default), and the dataframe.tail() methods will display the last (n) number of rows, again 5 by default.
+</p>
 
 <p>
-The following table shows the statistics of the iris data as provided by a dataframe .describe() method.
+<pre>
+Dataset Head
+------------
+   Sepal_Length  Sepal_Width  Petal_Length  Petal_Width        Class
+0           5.1          3.5           1.4          0.2  Iris-setosa
+1           4.9          3.0           1.4          0.2  Iris-setosa
+2           4.7          3.2           1.3          0.2  Iris-setosa
+3           4.6          3.1           1.5          0.2  Iris-setosa
+4           5.0          3.6           1.4          0.2  Iris-setosa
+</pre>
+</p>
+
+<p>
+<pre>
+Dataset Tail
+------------
+     Sepal_Length  Sepal_Width  Petal_Length  Petal_Width           Class
+145           6.7          3.0           5.2          2.3  Iris-virginica
+146           6.3          2.5           5.0          1.9  Iris-virginica
+147           6.5          3.0           5.2          2.0  Iris-virginica
+148           6.2          3.4           5.4          2.3  Iris-virginica
+149           5.9          3.0           5.1          1.8  Iris-virginica
+</pre>
+</p>
+
+<p>
+The following table shows the statistics of the iris data as provided by a dataframe .describe() method. This  provides descriptive statistics depending on the underlying data. In this case as it's numeric, we are provided with stats such as min, max and mean.
+<br/>
+Here's a complete explanation of the information below for describe() as per <a href="https://www.w3schools.com/python/pandas/ref_df_describe.asp">W3Schools</a>
+<br/>
+<pre>
+count - The number of not-empty values.
+mean - The average (mean) value.
+std - The standard deviation.
+min - the minimum value.
+25% - The 25% percentile*.
+50% - The 50% percentile*.
+75% - The 75% percentile*.
+max - the maximum value. 
+</pre>
 <p>
 <p>
 
@@ -71,6 +129,29 @@ The following table shows the statistics of the iris data as provided by a dataf
 |  max  |          7.9 |         4.4 |          6.9 |         2.5 |
 </p>
 
+<p>
+<b>My personal observations of the iris data</b>
+<br />
+The following represents my personal observations that I have formed whilst working with the data, and also viewing the graphs which I produced as per below.
+</p>
+
+<p>
+<b>Class comparison of both sepal and petal widths and lengths</b>
+<br />
+<img src="34_seaborn_histogram_kde_curve_all_iris_class_per_feature.png" style="width:800px;" />
+<br />
+First up I'll compare the 3 different classes of irish in the data - setosa, versicolor and virginica.  
+</p>
+<p>
+This seaborn graph demonstrates a very useful holistic overview of the data as a whole. Each statictic is visualised in a contrasting fashion per class. We have 4 plots in the one image - sepal length, sepal width, petal length and petal width.
+From these 4 plots we can easily garner the following information per class.
+</p>
+<p>
+<u>Setosa</u>
+Setosa has the longest sepal length at 
+</p>
+
+<br />
 <table>
   <tr>
     <th>Histogram Sepal and Petal Lengths</th>
@@ -89,13 +170,6 @@ The following table shows the statistics of the iris data as provided by a dataf
 </p>
 
 <br/>
-<p>
-<b>Class comparison of both sepal and petal widths and lengths</b>
-<br />
-<img src="34_seaborn_histogram_kde_curve_all_iris_class_per_feature.png" />
-</p>
-
-<br />
 <br /><br /><img src="01_histogram_sepal_and_petal_lengths.png" />
 <br /><br /><img src="02_scatter_all_sepal_petal_lengths.png" />
 <br /><br /><img src="03_scatter_setosa_sepal_petal_lengths.png" />
@@ -178,6 +252,7 @@ W3 Schools
 <a href="https://www.w3schools.com/python/matplotlib_histograms.asp">Histogram Plots</a>
 <br />
 <a href="https://www.w3schools.com/python/matplotlib_scatter.asp">Scatter Plots</a>
+<a href="https://www.w3schools.com/python/pandas/ref_df_describe.asp">Pandas DataFrame describe() Method</a>
 </p>
 
 <p>

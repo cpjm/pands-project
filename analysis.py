@@ -110,8 +110,7 @@ input("Press Enter to continue...")
 #3.1
 # Generate useful summary info to the outout file "iris_summary.txt"
 #ref https://pandashowto.com/how-to-save-dataframe-as-text-file/
-#I analyse this data further and what it means in my research
-#df.to_string("myfile.txt")
+# I analyse this data further and what it means in my research in readme.md
 #ref https://www.w3schools.com/python/pandas/ref_df_describe.asp
 #groupby "Class" means we describe() the stats per class of iris, which is more meaningful
 save_filename="iris_summary.txt"
@@ -119,8 +118,8 @@ if os.path.isfile(save_filename): os.remove(save_filename)
 lines = ["Iris Dataset Summary Info\n"+"-------------------------\n\n",\
     "Dataset Describe\n"+"----------------\n"+str(df.describe())+"\n\n",\
     "Dataset Group by Class Describe\n"+"-------------------------------\n"+str(df.groupby("Class").describe())+"\n\n", \
-    "Dataset Head\n"+"------------\n"+str(df.head)+"\n\n",\
-    "Dataset Tail\n"+"------------\n"+str(df.tail)+"\n\n"]
+    "Dataset Head\n"+"------------\n"+str(df.head())+"\n\n",\
+    "Dataset Tail\n"+"------------\n"+str(df.tail())+"\n\n"]
 with open(save_filename, 'w') as f:
     for line in lines:
         f.write(line)
@@ -128,21 +127,29 @@ with open(save_filename, 'w') as f:
 f.close()
 if display_plots_to_screen: print(df.groupby("Class").describe())
 
-#3.2
 #Saves a histogram of each variable to png files
 #As histgrams deal with numeric columns only, we
 #need to remove the non-numerical column i.e. the class flower description
 working_df = df # make a working copy of the dataset
-
-    
-#def gen_histogram(*indf, title,ylabel, xlabel,legend_title,legend_ol,save_filename,
-# save_filename_type="png",display_ploy_yn):
 df_list1=working_df.drop('Class',axis=1).copy() # we don't need the Class column, so we can drop it here
 df_list2=['Sepal Length', 'Sepal Width','Petal Length','Petal Width'] # These are our column names
 
-print("START - df.describe(ALL) 1:- ")
-df_list1.describe(include='all') 
-print("END - df.describe() 1:- ")
+###################################################################################################
+# trying a new fancy seaborn plot
+# as found on https://stackoverflow.com/questions/6282058/writing-numerical-values-on-the-plot-with-matplotlib
+# and changed for my dataframe
+###################################################################################################
+sns.set()
+df['Class'] = pd.Categorical(df['Class'])
+fig, axs = plt.subplots(2, 2, figsize=(12, 6))
+for col, ax in zip(df.columns[:4], axs.flat):
+    sns.histplot(data=df, x=col, kde=True, hue='Class', common_norm=False, legend=ax==axs[0,0], ax=ax)
+plt.tight_layout()
+save_filename="34_seaborn_histogram_kde_curve_all_iris_class_per_feature.png"
+if os.path.isfile(save_filename): os.remove(save_filename) 
+plt.savefig(save_filename, format="png")
+if display_plots_to_screen: plt.show()
+plt.close()
 
 ######################################################################
 # Histogram of the Sepal and Petal lengths for all 3 classes or iris
@@ -1163,29 +1170,3 @@ if display_plots_to_screen: plt.show()
 plt.close()
 '''
 
-###################################################################################################
-# trying a new fancy seaborn plot
-# as found on https://stackoverflow.com/questions/6282058/writing-numerical-values-on-the-plot-with-matplotlib
-# and changed for my dataframe
-###################################################################################################
-sns.set()
-#iris = sns.load_dataset('working_df')
-# make the 'Class' column categorical to fix the order
-#iris=df
-df['Class'] = pd.Categorical(df['Class'])
-fig, axs = plt.subplots(2, 2, figsize=(12, 6))
-for col, ax in zip(df.columns[:4], axs.flat):
-    sns.histplot(data=df, x=col, kde=True, hue='Class', common_norm=False, legend=ax==axs[0,0], ax=ax)
-plt.tight_layout()
-save_filename="34_seaborn_histogram_kde_curve_all_iris_class_per_feature.png"
-if os.path.isfile(save_filename): os.remove(save_filename) 
-plt.savefig(save_filename, format="png")
-if display_plots_to_screen: plt.show()
-plt.close()
-
-
-#3.3 
-#Outputs a scatter plot of each pair of variables
-
-#3.4
-#Performs any other analysis you think is appropriate
