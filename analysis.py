@@ -140,9 +140,11 @@ df_list2=['Sepal Length', 'Sepal Width','Petal Length','Petal Width'] # These ar
 # and changed for my dataframe
 ###################################################################################################
 sns.set()
-df['Class'] = pd.Categorical(df['Class'])
+df['Class'] = pd.Categorical(df['Class']) # categorise by Class 
 fig, axs = plt.subplots(2, 2, figsize=(12, 6))
-for col, ax in zip(df.columns[:4], axs.flat):
+
+# use first 4 dataframe columns only
+for col, ax in zip(df.columns[:4], axs.flat): 
     sns.histplot(data=df, x=col, kde=True, hue='Class', common_norm=False, legend=ax==axs[0,0], ax=ax)
 plt.tight_layout()
 save_filename="34_seaborn_histogram_kde_curve_all_iris_class_per_feature.png"

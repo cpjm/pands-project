@@ -12,7 +12,7 @@
 <p>
 I had no idea what this dataset was all about. Before diving in headfirst to do the analysis and programming, it was imperative that I got an understanding of what this data means - to garner a real-world understanding of why it exists and where it came from. 
 <br />
- From Wikipedia (1.1) and some informative YouTube videos (e.g. Great Learning 1.2) I discovered the following facts. The data originates from 1936 and was created a botanist and statistician Ronald Fisher. 
+ From Wikipedia (1.1) and some informative YouTube videos (e.g. Great Learning 1.2) I discovered the following facts. The data originates from 1936 and was created by a botanist and statistician Ronald Fisher. 
 <br />
 The data set is a collection of measurements of the sepal and petal of 3 varieties of the iris flower - Setosa, Virginica and Versicolor. The flowers were picked from the same field (in Quebec Canada) on the same day and by the same person using the same apparatus. 
 </p>
@@ -46,12 +46,12 @@ The petal is the inner coloured part of the flower.
 <br />
 <img src="images/parts-of-a-flower_full_610.png" alt="parts of a flower" title="Parts of a flower" />
 </p>
-
 <br />
-<br />
-
 <p>
 The iris data is provided in a comma delimited csv file. As such this format isn't sufficient to perform analysis on. We therefore load this into a DataFrame, which converts it into a tabular format in memory. We can then perform many operations on this type of data, including sub-sets, sorting, statistics, plotting etc.
+</p>
+<p>
+There are 150 rows of data. 50 rows for each of the 3 classes. 
 </p>
 <p>
 There are three different class of irish included in the namely
@@ -129,26 +129,133 @@ max - the maximum value.
 |  max  |          7.9 |         4.4 |          6.9 |         2.5 |
 </p>
 
+<h2>My personal observations of the iris data</h2>
 <p>
-<b>My personal observations of the iris data</b>
-<br />
 The following represents my personal observations that I have formed whilst working with the data, and also viewing the graphs which I produced as per below.
 </p>
 
 <p>
 <b>Class comparison of both sepal and petal widths and lengths</b>
 <br />
-<img src="34_seaborn_histogram_kde_curve_all_iris_class_per_feature.png" style="width:800px;" />
+<img src="34_seaborn_histogram_kde_curve_all_iris_class_per_feature.png" style="width:880px;" />
+</p>
+<p align="center">
+Credit: Graph found on <a href="https://stackoverflow.com/questions/6282058/writing-numerical-values-on-the-plot-with-matplotlib">Stackoverflow</a> and changed by me for my iris dataframe.
+</p>
+
+<p>
+This seaborn graph demonstrates a very useful holistic overview of the data as a whole. Each statictic is visualised in a contrasting fashion per class. 
+</p>
+<p>
+This enables us to compare the 3 different classes of irish in the data - setosa, versicolor and virginica.  
+</p>
+<p>
+We have 4 plots in the one image - sepal length, sepal width, petal length and petal width. From these 4 plots we can easily garner the following useful information, combined with the information from describe().
+</p>
+<p>
+
 <br />
-First up I'll compare the 3 different classes of irish in the data - setosa, versicolor and virginica.  
+<u>Sepal Length</u>
+<br />
+<ul>
+  <li>
+    Virginica has the longest sepal length at 7.9cm
+  </li>
+  <li>
+    Setosa has the shortest sepal length at 4.3cm
+  </li>
+  <li>
+    Versicolor sits in the middle length wise, and would be representative of the mean of 5.84cm
+  </li>
+  <li>
+    There is a relatively equal spread of variation of lengths across the 3 classes
+  </li>
+</ul>
+
+<br />
+<u>Sepal Width</u>
+<br />
+<ul>
+  <li>
+    Setosa has the widest sepal width at a max of 4.4cm
+  </li>
+  <li>
+    Versicolor has the narrowest sepal width of a min of 2cm
+  </li>
+  <li>
+    Virginica represents the middle of the road, the mean being 3.05cm
+  </li>
+  <li>
+    Similar to the lengths, we see an equal spread of variation in width
+  </li>
+</ul>
+
+<br />
+<u>Petal Length</u>
+<br />
+<ul>
+  <li>
+    Virginica has the longest petal length, with a max of 6.9cm
+  </li>
+  <li>
+    Setosa has the shortest with a min length of 1cm
+  </li>
+  <li>
+    Versicolor is in the middle of the pack for petal length, the mean being 3.76cm
+  </li>
+  <li>
+    Setosa has a very narrow spread of petal length, whilst the other 2 are more evenly spread 
+  </li>
+</ul>
+
+<br />
+<u>Petal Width</u>
+<br />
+<ul>
+  <li>
+    Setosa has the shortest petal width, the min being 0.1cm
+  </li>
+  <li>
+    The longest petal width goes to Virginica, with a max of 2.5cm
+  </li>
+  <li>
+    This then leaves Versicolor representing the moddle ground, with a mean of ~1.2cm
+  </li>
+  <li>
+    Again we wee Setosa with a very narrow spread, whilst the other 2 are more evenly spread 
+  </li>
+</ul>
 </p>
-<p>
-This seaborn graph demonstrates a very useful holistic overview of the data as a whole. Each statictic is visualised in a contrasting fashion per class. We have 4 plots in the one image - sepal length, sepal width, petal length and petal width.
-From these 4 plots we can easily garner the following information per class.
-</p>
-<p>
+
+<br />
+<h3>Observations per Class of iris</h3>
+<br />
 <u>Setosa</u>
-Setosa has the longest sepal length at 
+<br />
+<p>
+Setosa is overall the smallest iris in the 3 types measured. It is also the most consistant in measurements, with a small variation to be seen in all measurements.
+</p>
+
+<u>Virginica</u>
+<br />
+<p>
+Virginica then represents the larget of the 3 iris flowers. It also demonstrates the widest spread in all measurements. 
+</p>
+
+<u>Versicolor</u>
+<br />
+<p>
+Versicolor sits in the middle ground. Its variations in measurements site between setosa and virginica. As does its petal/sepal lengths and widths.
+</p>
+
+<br/>
+<br/>
+<h3>Additional Graphs</h3>
+<p>
+The following are additional graphs reflecting my observations and opinion above.
+</p>
+<p>
+There is a wide selection of histogram and scatter plots available for your persual. You will see that my above observations are also born out in these plots also.
 </p>
 
 <br />
@@ -252,7 +359,10 @@ W3 Schools
 <a href="https://www.w3schools.com/python/matplotlib_histograms.asp">Histogram Plots</a>
 <br />
 <a href="https://www.w3schools.com/python/matplotlib_scatter.asp">Scatter Plots</a>
+<br />
 <a href="https://www.w3schools.com/python/pandas/ref_df_describe.asp">Pandas DataFrame describe() Method</a>
+<br />
+<a href="https://www.w3schools.com/python/matplotlib_subplot.asp">Matplotlib Subplot</a>
 </p>
 
 <p>
